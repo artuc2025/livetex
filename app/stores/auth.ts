@@ -21,7 +21,7 @@ export const useAuthStore = defineStore('auth', {
       this.email = '';
       this.phone_number = '';
       this.isLoggedIn = false;
-      window.location.href = '/login';
+      await navigateTo('/login');
     },
   },
 });
