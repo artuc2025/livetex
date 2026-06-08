@@ -1,4 +1,3 @@
-import { defineStore } from 'pinia';
 import { useLiveTexChat } from '~/composables/useLiveTexChat';
 
 export const useAuthStore = defineStore('auth', {
@@ -15,9 +14,9 @@ export const useAuthStore = defineStore('auth', {
       this.phone_number = '+79001234567';
       this.isLoggedIn = true;
     },
-    logout() {
+    async logout() {
       const { reinit } = useLiveTexChat();
-      reinit();
+      await reinit();
       this.fullName = '';
       this.email = '';
       this.phone_number = '';
